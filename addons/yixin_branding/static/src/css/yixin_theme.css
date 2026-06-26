@@ -161,6 +161,34 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
 .o-dropdown--menu .o_app[data-menu-xmlid="stock.menu_stock_root"]::before { content: "\f1b3"; }    /* cubes */
 .o-dropdown--menu .o_app[data-menu-xmlid="base.menu_administration"]::before { content: "\f013"; } /* cog */
 .o-dropdown--menu .o_app[data-menu-xmlid="base.menu_tests"]::before { content: "\f0c3"; }          /* flask */
+
+/* ============ 7. Save / Discard as text buttons (not cloud icon) ============ */
+.o_form_button_save,
+.o_form_button_cancel {
+    padding: 4px 14px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    line-height: 1.5 !important;
+    height: auto !important;
+}
+.o_form_button_save i,
+.o_form_button_cancel i { display: none !important; }
+.o_form_button_save {
+    background: #2f9bd6 !important;
+    color: #ffffff !important;
+    border: 0 !important;
+}
+.o_form_button_save:hover { background: #2486bd !important; }
+.o_form_button_save::after { content: "保存"; }
+.o_form_button_cancel {
+    background: #eef1f4 !important;
+    color: #444 !important;
+    border: 1px solid #d6dce2 !important;
+    margin-left: 6px;
+}
+.o_form_button_cancel:hover { background: #e2e6ea !important; }
+.o_form_button_cancel::after { content: "放弃"; }
 /* value column: light blue tint */
 .o_form_view .o_inner_group.grid > .o_wrap_input,
 .o_form_view .o_inner_group.grid > .o_cell_custom:not(.o_wrap_label) {
