@@ -189,6 +189,30 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
 }
 .o_form_button_cancel:hover { background: #e2e6ea !important; }
 .o_form_button_cancel::after { content: "放弃"; }
+
+/* ============ 8. Dialog inputs -> visible bordered boxes ============
+   Editable-list / form inputs inside dialogs (e.g. the Change Password
+   wizard) are borderless by default and look empty; give them a clear box. */
+.modal .o_field_widget input.o_input,
+.modal .o_field_widget textarea.o_input,
+.modal .o_data_cell input,
+.modal .o_data_cell textarea,
+.modal .o_data_cell .o_input {
+    border: 1px solid #c7d2dc !important;
+    border-radius: 6px !important;
+    background: #ffffff !important;
+    padding: 6px 10px !important;
+    min-height: 34px !important;
+    width: 100%;
+}
+.modal .o_data_cell input:focus,
+.modal .o_field_widget input.o_input:focus,
+.modal .o_data_cell .o_input:focus {
+    border-color: #2f9bd6 !important;
+    box-shadow: 0 0 0 2px rgba(47,155,214,.15) !important;
+    outline: 0 !important;
+}
+.modal .o_list_table .o_data_cell { padding: 6px 10px !important; }
 /* value column: light blue tint */
 .o_form_view .o_inner_group.grid > .o_wrap_input,
 .o_form_view .o_inner_group.grid > .o_cell_custom:not(.o_wrap_label) {
