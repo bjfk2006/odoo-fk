@@ -1,0 +1,75 @@
+/* YIXIN-THEME-MARKER — backend theme: light blue + light green, larger fonts,
+   tabular form details. Loaded into web.assets_backend by yixin_branding. */
+
+/* ============ 1. Replace purple with light blue + light green ============ */
+.o_main_navbar {
+    background: linear-gradient(90deg, #36a9c9 0%, #5cb85c 100%) !important;
+}
+.o_main_navbar > .o_menu_brand,
+.o_main_navbar .o_nav_entry,
+.o_main_navbar .dropdown-toggle,
+.o_main_navbar .o_menu_systray > * {
+    color: #ffffff !important;
+}
+
+/* primary buttons / links / accents -> light blue */
+.btn-primary,
+.o_form_button_save,
+.o-dropdown--menu .dropdown-item.active {
+    background-color: #2f9bd6 !important;
+    border-color: #2f9bd6 !important;
+    color: #fff !important;
+}
+.btn-primary:hover, .btn-primary:focus, .o_form_button_save:hover {
+    background-color: #2486bd !important;
+    border-color: #2486bd !important;
+}
+.btn-secondary { color: #2486bd !important; }
+a, .o_form_uri, .text-primary, .o_field_widget .text-primary {
+    color: #2486bd !important;
+}
+input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; }
+
+/* active notebook tab underline -> green; statusbar reached -> green */
+.o_notebook .nav-link.active {
+    color: #2486bd !important;
+    border-bottom: 3px solid #5cb85c !important;
+}
+.o_statusbar_status .o_arrow_button.btn-primary,
+.o_statusbar_status .dropdown-item.btn-primary {
+    background-color: #5cb85c !important;
+    border-color: #5cb85c !important;
+    color: #fff !important;
+}
+
+/* ============ 2. Larger fonts ============ */
+.o_web_client { font-size: 15px; }
+.o_form_view, .o_list_view { font-size: 15px; }
+.o_form_view .o_form_label,
+.o_form_view .o_field_widget,
+.o_list_table { font-size: 15px; }
+.o_main_navbar { font-size: 15px; }
+.o_form_sheet .oe_title h1,
+.o_form_sheet .oe_title h1 input { font-size: 28px !important; }
+.o_breadcrumb, .o_control_panel .o_cp_top { font-size: 15px; }
+
+/* ============ 3. Form detail -> clean bordered/striped table ============ */
+.o_form_view .o_inner_group {
+    border: 1px solid #d4dbe2;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+.o_form_view .o_inner_group > tbody > tr > td,
+.o_form_view .o_inner_group > tbody > tr > th {
+    padding: 9px 14px !important;
+    border-bottom: 1px solid #e6ebf0;
+    vertical-align: middle;
+}
+.o_form_view .o_inner_group > tbody > tr:nth-child(odd)  { background: #f3faf4; } /* light green */
+.o_form_view .o_inner_group > tbody > tr:nth-child(even) { background: #f2f9fd; } /* light blue  */
+.o_form_view .o_inner_group .o_form_label {
+    font-weight: 600;
+    color: #2f4858;
+    white-space: nowrap;
+}
