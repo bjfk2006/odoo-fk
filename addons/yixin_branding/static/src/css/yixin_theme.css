@@ -42,16 +42,33 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
     color: #fff !important;
 }
 
-/* ============ 2. Larger fonts ============ */
-.o_web_client { font-size: 15px; }
-.o_form_view, .o_list_view { font-size: 15px; }
-.o_form_view .o_form_label,
-.o_form_view .o_field_widget,
-.o_list_table { font-size: 15px; }
+/* ============ 2. Font hierarchy ============
+   Sizes step down by level; every level is bold EXCEPT the innermost
+   (the field values), which stay regular weight and smallest. */
+.o_web_client { font-size: 14px; }
 .o_main_navbar { font-size: 15px; }
+
+/* L1 — record title (largest, bold) */
 .o_form_sheet .oe_title h1,
-.o_form_sheet .oe_title h1 input { font-size: 28px !important; }
-.o_breadcrumb, .o_control_panel .o_cp_top { font-size: 15px; }
+.o_form_sheet .oe_title h1 input { font-size: 25px !important; font-weight: 700 !important; }
+.o_breadcrumb .active,
+.o_breadcrumb .o_last_breadcrumb_item { font-size: 18px; font-weight: 700; }
+
+/* L2 — notebook tabs (bold) */
+.o_notebook .nav-link { font-size: 16.5px !important; font-weight: 700 !important; }
+
+/* L3 — field labels (bold) */
+.o_form_view .o_form_label,
+.o_form_view .o_wrap_label { font-size: 14.5px; font-weight: 700; }
+
+/* innermost — field values (regular weight, smallest) */
+.o_form_view .o_inner_group.grid > .o_wrap_input,
+.o_form_view .o_inner_group.grid > .o_wrap_input .o_field_widget,
+.o_form_view .o_inner_group.grid > .o_wrap_input .o_field_widget * {
+    font-weight: 400 !important;
+    font-size: 13.5px;
+}
+.o_list_table { font-size: 14px; }
 
 /* ============ 3. Form detail -> clean bordered table ============
    Odoo 17+ renders groups as a CSS grid of .o_cell divs (no <table>),
@@ -74,8 +91,28 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
 .o_form_view .o_inner_group.grid > .o_wrap_label {
     border-right: 1px solid #dde5ec;
     background: #f1f9f2;
-    font-weight: 600;
+    font-weight: 700;
     color: #2f4858;
+}
+
+/* ============ 4. Field help "?" -> standard circled badge ============
+   form_label.xml renders help as <sup class="text-info">?</sup>; round it. */
+.o_form_view .o_form_label sup,
+.o_form_view .o_wrap_label sup {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    padding: 0 !important;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+    cursor: help;
 }
 /* value column: light blue tint */
 .o_form_view .o_inner_group.grid > .o_wrap_input,
