@@ -123,6 +123,44 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
     vertical-align: middle;
     cursor: help;
 }
+
+/* ============ 6. Apps menu dropdown — bigger, bolder, with icons ============ */
+.o-dropdown--menu:has(.o_app) {
+    min-width: 250px;
+    padding: 8px !important;
+}
+.o-dropdown--menu .o_app {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    border-radius: 8px;
+    color: #2f4858 !important;
+}
+.o-dropdown--menu .o_app:hover,
+.o-dropdown--menu .o_app.focus {
+    background: #e6f4ea !important;
+    color: #2e8b57 !important;
+}
+/* leading icon (Font Awesome) — default + per-app */
+.o-dropdown--menu .o_app::before {
+    font-family: "FontAwesome";
+    font-size: 20px;
+    width: 26px;
+    text-align: center;
+    color: #2f9bd6;
+    content: "\f009"; /* th-large (default) */
+}
+.o-dropdown--menu .o_app:hover::before,
+.o-dropdown--menu .o_app.focus::before { color: #2e8b57; }
+.o-dropdown--menu .o_app[data-menu-xmlid="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"]::before { content: "\f0e4"; } /* dashboard */
+.o-dropdown--menu .o_app[data-menu-xmlid="account.menu_finance"]::before { content: "\f0d6"; }    /* invoice/money */
+.o-dropdown--menu .o_app[data-menu-xmlid="purchase.menu_purchase_root"]::before { content: "\f07a"; } /* cart */
+.o-dropdown--menu .o_app[data-menu-xmlid="stock.menu_stock_root"]::before { content: "\f1b3"; }    /* cubes */
+.o-dropdown--menu .o_app[data-menu-xmlid="base.menu_administration"]::before { content: "\f013"; } /* cog */
+.o-dropdown--menu .o_app[data-menu-xmlid="base.menu_tests"]::before { content: "\f0c3"; }          /* flask */
 /* value column: light blue tint */
 .o_form_view .o_inner_group.grid > .o_wrap_input,
 .o_form_view .o_inner_group.grid > .o_cell_custom:not(.o_wrap_label) {
