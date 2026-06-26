@@ -1,0 +1,56 @@
+# Test/staging stack for the purchase_transit feature.
+# Runs THIS repo's source (mounted at /opt/odoo-src) on the official odoo:19
+# image, which provides all Python dependencies. See
+# docs/design/2026-06-25-purchase-transit-tracking-runbook.md
+#
+# Usage:
+#   docker compose up -d         # first boot creates the DB and installs the module
+#   open http://<host>:8069      # DB "odoo", login admin / admin (demo data on)
+#   docker compose down          # stop (add -v to also drop the DB/filestore volumes)
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: postgres
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "odoo"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  odoo:
+    image: odoo:19
+    depends_on:
+      db:
+        condition: service_healthy
+    # root avoids permission issues reading the bind-mounted source and
+    # writing the data dir; fine for a test box, not for production.
+    user: root
+    environment:
+      HOME: /tmp
+    # Run the repo's own odoo-bin (not the image's built-in odoo) so we test
+    # this exact code. `-i purchase_transit` only installs on first boot;
+    # it is a no-op once the module is already installed.
+    entrypoint: ["python3", "/opt/odoo-src/odoo-bin"]
+    command: >
+      -d odoo
+      --db_host=db --db_port=5432 --db_user=odoo --db_password=odoo
+      --addons-path=/opt/odoo-src/addons
+      --data-dir=/var/lib/odoo-data
+      --http-interface=0.0.0.0 --http-port=8069
+      --max-cron-threads=1
+      -i purchase_transit
+    volumes:
+      - .:/opt/odoo-src
+      - odoo-web-data:/var/lib/odoo-data
+    ports:
+      - "8069:8069"
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:

@@ -4,7 +4,31 @@
 **模块路径**：`addons/purchase_transit/`
 **适用**：Odoo 19.0 社区版
 
-> ⚠️ 本模块在开发机**未做 Odoo 启动 / 升级 / 自动化测试**（无完整依赖与数据库环境，本地跑会产生假信号）。仅做了静态自检：Python `py_compile` 语法通过、所有 XML 良构、CSV 列对齐、视图引用的 object 方法均已定义。功能验证需验证者在测试库执行下列步骤。
+> ✅ **已在测试服 43.134.82.40 用 Docker（odoo:19 + postgres:16）实测**：模块安装成功、6 个自动化测试全绿（`0 failed, 0 error of 6 tests`）、Web 服务 `HTTP 200`。实测过程中发现并修复了 3 个真实问题（`date_ordered` 类型不一致、Odoo 19 搜索视图 `expand` 已移除、里程碑约束误拦回填）——见 §10 与 git 提交 `9817822a` / `346a41ed`。
+
+---
+
+## 0. Docker Compose 一键启动（推荐，已实测）
+
+仓库根已提供 `docker-compose.yml`，用官方 `odoo:19` 镜像的依赖 + **挂载本仓库源码跑 `odoo-bin`**（即跑这套真实代码，而非镜像内置 Odoo）。
+
+```bash
+# 在仓库根目录
+docker compose up -d            # 首次启动自动建库 odoo + 安装 purchase_transit（含 demo 数据）
+docker compose logs -f odoo     # 跟踪日志，等到 "HTTP service (werkzeug) running"
+# 浏览器打开 http://<host>:8069   DB=odoo, 账号 admin / 密码 admin
+docker compose down             # 停止（加 -v 连同 DB/filestore 数据卷一并删除）
+```
+
+- 服务清单：`db`（postgres:16，健康检查就绪后才起 odoo）、`odoo`（19，端口 8069）。
+- `command` 里的 `-i purchase_transit` 仅首次安装；模块已装后为 no-op，可保留。
+- 改了模块代码要重载：`docker compose run --rm odoo -d odoo -u purchase_transit --stop-after-init`（或临时把 command 的 `-i` 换成 `-u`）。
+- 跑测试：
+  ```bash
+  docker compose run --rm odoo -d test_pt -i purchase_transit \
+    --test-enable --test-tags /purchase_transit --stop-after-init --no-http --max-cron-threads=0
+  ```
+- ⚠️ 外网访问 8069 需云安全组放行入站；`user: root` 仅适合测试环境（生产请用专用用户 + 受控权限）。
 
 ---
 
