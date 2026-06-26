@@ -9,3 +9,10 @@ const systray = registry.category("systray");
 if (!session.yx_show_notification && systray.contains("mail.messaging_menu")) {
     systray.remove("mail.messaging_menu");
 }
+
+// Remove the "My Odoo.com Account" user-menu entry to avoid accidental jumps
+// to accounts.odoo.com.
+const userMenu = registry.category("user_menuitems");
+if (userMenu.contains("odoo_account")) {
+    userMenu.remove("odoo_account");
+}
