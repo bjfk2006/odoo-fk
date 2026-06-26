@@ -8,6 +8,7 @@
     'depends': ['web'],
     'data': [
         'views/webclient_templates.xml',
+        'data/hide_discuss.xml',
     ],
     'assets': {
         'web.assets_backend': [
