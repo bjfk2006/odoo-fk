@@ -187,11 +187,16 @@ class PurchaseTransit(models.Model):
     # ------------------------------------------------------------------
     @api.constrains(*_ACTUAL_FIELDS)
     def _check_milestone_order(self):
-        """Actual dates, where set, must be chronologically non-decreasing."""
+        """Shipping milestone actual dates, where set, must be chronologically
+        non-decreasing. ``date_ordered`` (auto-derived from PO approval) is a
+        reference point, not validated — so historical / back-dated shipments
+        can be recorded freely."""
         for rec in self:
             previous_key = None
             previous_date = None
             for state_key, actual_field, _planned in MILESTONES:
+                if state_key == 'ordered':
+                    continue
                 value = rec[actual_field]
                 if not value:
                     continue

@@ -93,8 +93,12 @@ class TestTransitFlow(TransactionCase):
         transit.planned_eta = '2026-02-18'
         transit.actual_ata = '2026-02-20'
         self.assertEqual(transit.state, 'arrived')
-        self.assertEqual(transit.eta_delay_days, 2)
-        self.assertEqual(transit.transit_days, 15)
+        self.assertEqual(transit.eta_delay_days, 2)  # Feb 20 - Feb 18
+
+        # transit_days is departure (ATD) -> receipt, per design §7.2.
+        transit.actual_received = '2026-02-22'
+        self.assertEqual(transit.state, 'received')
+        self.assertEqual(transit.transit_days, 17)  # Feb 22 - Feb 05
 
     def test_partial_receipt_flag(self):
         """部分收货: is_partial=True 且仍标记 received。"""

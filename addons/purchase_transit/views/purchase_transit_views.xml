@@ -183,7 +183,7 @@
                         domain="[('state', '=', 'received')]"/>
                 <separator/>
                 <filter name="filter_eta" string="ETA" date="planned_eta"/>
-                <group expand="0" string="Group By">
+                <group>
                     <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
                     <filter name="group_partner" string="Supplier" context="{'group_by': 'partner_id'}"/>
                     <filter name="group_forwarder" string="Forwarder" context="{'group_by': 'forwarder_id'}"/>
