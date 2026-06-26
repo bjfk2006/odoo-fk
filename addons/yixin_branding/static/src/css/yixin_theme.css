@@ -53,23 +53,33 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
 .o_form_sheet .oe_title h1 input { font-size: 28px !important; }
 .o_breadcrumb, .o_control_panel .o_cp_top { font-size: 15px; }
 
-/* ============ 3. Form detail -> clean bordered/striped table ============ */
-.o_form_view .o_inner_group {
-    border: 1px solid #d4dbe2;
+/* ============ 3. Form detail -> clean bordered table ============
+   Odoo 17+ renders groups as a CSS grid of .o_cell divs (no <table>),
+   so we draw the lines on the grid cells. */
+.o_form_view .o_inner_group.grid {
+    border: 1px solid #c7d2dc;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 12px;
+    column-gap: 0 !important;
+    row-gap: 0 !important;
+    margin-bottom: 14px;
 }
-.o_form_view .o_inner_group > tbody > tr > td,
-.o_form_view .o_inner_group > tbody > tr > th {
+.o_form_view .o_inner_group.grid > .o_cell {
+    border-bottom: 1px solid #dde5ec;
     padding: 9px 14px !important;
-    border-bottom: 1px solid #e6ebf0;
-    vertical-align: middle;
+    align-content: center;
+    margin: 0 !important;
 }
-.o_form_view .o_inner_group > tbody > tr:nth-child(odd)  { background: #f3faf4; } /* light green */
-.o_form_view .o_inner_group > tbody > tr:nth-child(even) { background: #f2f9fd; } /* light blue  */
-.o_form_view .o_inner_group .o_form_label {
+/* label column: light green tint + bold + vertical divider */
+.o_form_view .o_inner_group.grid > .o_wrap_label {
+    border-right: 1px solid #dde5ec;
+    background: #f1f9f2;
     font-weight: 600;
     color: #2f4858;
-    white-space: nowrap;
 }
+/* value column: light blue tint */
+.o_form_view .o_inner_group.grid > .o_wrap_input,
+.o_form_view .o_inner_group.grid > .o_cell_custom:not(.o_wrap_label) {
+    background: #f1f8fd;
+}
+.o_form_view .o_inner_group.grid > .o_wrap_label .o_form_label { font-weight: 600; }
