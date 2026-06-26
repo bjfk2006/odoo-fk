@@ -9,6 +9,7 @@
     'data': [
         'views/webclient_templates.xml',
         'views/res_config_settings_views.xml',
+        'views/change_password_views.xml',
         'data/hide_discuss.xml',
     ],
     'assets': {
