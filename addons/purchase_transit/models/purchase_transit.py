@@ -83,7 +83,8 @@ class PurchaseTransit(models.Model):
 
     # --- Milestones: planned + actual (design §7.2), day granularity ---
     date_ordered = fields.Date(
-        string='Ordered', related='order_id.date_approve', store=True)
+        string='Ordered', compute='_compute_date_ordered', store=True,
+        help='Order confirmation date (date part of the PO approval datetime).')
     planned_factory_out = fields.Date(string='Planned Factory Out')
     actual_factory_out = fields.Date(string='Actual Factory Out', tracking=True)
     planned_gate_in = fields.Date(string='Planned Gate-in')
@@ -126,6 +127,12 @@ class PurchaseTransit(models.Model):
     # ------------------------------------------------------------------
     # Compute
     # ------------------------------------------------------------------
+    @api.depends('order_id.date_approve')
+    def _compute_date_ordered(self):
+        for rec in self:
+            rec.date_ordered = fields.Date.to_date(rec.order_id.date_approve) \
+                if rec.order_id.date_approve else False
+
     @api.depends('product_qty', 'qty_received')
     def _compute_is_partial(self):
         for rec in self:
