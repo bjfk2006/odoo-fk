@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form -->
+    <record id="purchase_transit_view_form" model="ir.ui.view">
+        <field name="name">purchase.transit.form</field>
+        <field name="model">purchase.transit</field>
+        <field name="arch" type="xml">
+            <form string="Transit Tracking">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_purchase_order" type="object"
+                                class="oe_stat_button" icon="fa-shopping-cart"
+                                string="Purchase Order"
+                                invisible="not order_id"/>
+                    </div>
+                    <widget name="web_ribbon" title="Late" bg_color="text-bg-danger"
+                            invisible="not is_late"/>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Source">
+                            <field name="purchase_line_id" options="{'no_create': True}"/>
+                            <field name="order_id" readonly="1"/>
+                            <field name="product_id" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="product_qty"/>
+                            <field name="qty_received"/>
+                            <field name="is_partial"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Shipment">
+                            <field name="transport_mode"/>
+                            <field name="forwarder_id"/>
+                            <field name="vessel_name"/>
+                            <field name="voyage_no"/>
+                            <field name="container_no"/>
+                            <field name="bill_of_lading"/>
+                            <field name="incoterm_id" readonly="1"/>
+                            <field name="pol"/>
+                            <field name="pot"/>
+                            <field name="pod"/>
+                        </group>
+                    </group>
+                    <group string="Milestones">
+                        <group>
+                            <label for="date_ordered" string="Ordered"/>
+                            <div class="o_row"><field name="date_ordered" readonly="1"/></div>
+                            <label for="planned_factory_out" string="Factory Out (plan / actual)"/>
+                            <div class="o_row">
+                                <field name="planned_factory_out"/> /
+                                <field name="actual_factory_out"/>
+                            </div>
+                            <label for="planned_gate_in" string="Gate-in (plan / actual)"/>
+                            <div class="o_row">
+                                <field name="planned_gate_in"/> /
+                                <field name="actual_gate_in"/>
+                            </div>
+                            <label for="planned_etd" string="ETD / ATD"/>
+                            <div class="o_row">
+                                <field name="planned_etd"/> /
+                                <field name="actual_atd"/>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="planned_transshipment" string="Transshipment (plan / actual)"/>
+                            <div class="o_row">
+                                <field name="planned_transshipment"/> /
+                                <field name="actual_transshipment"/>
+                            </div>
+                            <label for="planned_eta" string="ETA / ATA"/>
+                            <div class="o_row">
+                                <field name="planned_eta"/> /
+                                <field name="actual_ata"/>
+                            </div>
+                            <label for="planned_customs" string="Customs (plan / actual)"/>
+                            <div class="o_row">
+                                <field name="planned_customs"/> /
+                                <field name="actual_customs"/>
+                            </div>
+                            <label for="planned_received" string="Received (plan / actual)"/>
+                            <div class="o_row">
+                                <field name="planned_received"/> /
+                                <field name="actual_received"/>
+                            </div>
+                            <field name="eta_delay_days"/>
+                            <field name="transit_days"/>
+                        </group>
+                    </group>
+                    <field name="note" placeholder="Internal notes..."/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- List -->
+    <record id="purchase_transit_view_list" model="ir.ui.view">
+        <field name="name">purchase.transit.list</field>
+        <field name="model">purchase.transit</field>
+        <field name="arch" type="xml">
+            <list string="Transit Tracking" decoration-danger="is_late"
+                  decoration-muted="state == 'received'">
+                <field name="name"/>
+                <field name="order_id"/>
+                <field name="product_id"/>
+                <field name="partner_id"/>
+                <field name="container_no" optional="show"/>
+                <field name="vessel_name" optional="hide"/>
+                <field name="planned_eta" optional="show"/>
+                <field name="actual_ata" optional="show"/>
+                <field name="eta_delay_days" optional="hide"/>
+                <field name="state" widget="badge"/>
+                <field name="is_late" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban grouped by milestone (logistics board) -->
+    <record id="purchase_transit_view_kanban" model="ir.ui.view">
+        <field name="name">purchase.transit.kanban</field>
+        <field name="model">purchase.transit</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" records_draggable="false"
+                    group_create="false">
+                <field name="is_late"/>
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_card #{record.is_late.raw_value ? 'oe_kanban_color_1' : ''}">
+                            <div class="o_kanban_record_title">
+                                <strong><field name="name"/></strong>
+                            </div>
+                            <div><field name="product_id"/></div>
+                            <div class="text-muted"><field name="partner_id"/></div>
+                            <div>
+                                <span t-if="record.container_no.value">📦 <field name="container_no"/></span>
+                            </div>
+                            <div>
+                                ETA: <field name="planned_eta"/>
+                                <span t-if="record.is_late.raw_value" class="badge text-bg-danger">Late</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Calendar by ETA -->
+    <record id="purchase_transit_view_calendar" model="ir.ui.view">
+        <field name="name">purchase.transit.calendar</field>
+        <field name="model">purchase.transit</field>
+        <field name="arch" type="xml">
+            <calendar string="ETA" date_start="planned_eta" color="state" mode="month">
+                <field name="name"/>
+                <field name="partner_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Search -->
+    <record id="purchase_transit_view_search" model="ir.ui.view">
+        <field name="name">purchase.transit.search</field>
+        <field name="model">purchase.transit</field>
+        <field name="arch" type="xml">
+            <search string="Transit Tracking">
+                <field name="name"/>
+                <field name="order_id"/>
+                <field name="product_id"/>
+                <field name="partner_id"/>
+                <field name="container_no"/>
+                <field name="bill_of_lading"/>
+                <field name="vessel_name"/>
+                <filter name="late" string="Late" domain="[('is_late', '=', True)]"/>
+                <filter name="in_transit" string="In Transit"
+                        domain="[('state', 'not in', ['received'])]"/>
+                <filter name="received" string="Received"
+                        domain="[('state', '=', 'received')]"/>
+                <separator/>
+                <filter name="filter_eta" string="ETA" date="planned_eta"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="group_partner" string="Supplier" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_forwarder" string="Forwarder" context="{'group_by': 'forwarder_id'}"/>
+                    <filter name="group_eta" string="ETA Month" context="{'group_by': 'planned_eta:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="purchase_transit_action" model="ir.actions.act_window">
+        <field name="name">Transit Tracking</field>
+        <field name="res_model">purchase.transit</field>
+        <field name="view_mode">kanban,list,calendar,form,pivot,graph</field>
+        <field name="search_view_id" ref="purchase_transit_view_search"/>
+        <field name="context">{'search_default_in_transit': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No transit tracking yet</p>
+            <p>Generate transit records from a confirmed purchase order, then
+               update milestones as the shipment progresses.</p>
+        </field>
+    </record>
+
+    <!-- Menus -->
+    <menuitem id="menu_purchase_transit_root"
+              name="Transit Tracking"
+              parent="purchase.menu_purchase_root"
+              sequence="40"/>
+    <menuitem id="menu_purchase_transit"
+              action="purchase_transit_action"
+              parent="menu_purchase_transit_root"
+              sequence="10"/>
+
+</odoo>

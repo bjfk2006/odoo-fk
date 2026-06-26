@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_transit_view_pivot" model="ir.ui.view">
+        <field name="name">purchase.transit.pivot</field>
+        <field name="model">purchase.transit</field>
+        <field name="arch" type="xml">
+            <pivot string="Transit Analysis">
+                <field name="partner_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="transit_days" type="measure"/>
+                <field name="eta_delay_days" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="purchase_transit_view_graph" model="ir.ui.view">
+        <field name="name">purchase.transit.graph</field>
+        <field name="model">purchase.transit</field>
+        <field name="arch" type="xml">
+            <graph string="Transit Analysis" type="bar">
+                <field name="partner_id"/>
+                <field name="transit_days" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+</odoo>
