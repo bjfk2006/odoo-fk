@@ -1,0 +1,735 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_transit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-26 10:43+0000\n"
+"PO-Revision-Date: 2026-06-26 10:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__actual_ata
+msgid "ATA (Arrived)"
+msgstr "实际到港 (ATA)"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__actual_atd
+msgid "ATD (Departed)"
+msgstr "实际开船 (ATD)"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_needaction
+msgid "Action Needed"
+msgstr "需要处理"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__active
+msgid "Active"
+msgstr "有效"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_ids
+msgid "Activities"
+msgstr "活动"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "活动异常修饰"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_state
+msgid "Activity State"
+msgstr "活动状态"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "活动类型图标"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__actual_customs
+msgid "Actual Customs Cleared"
+msgstr "实际清关日期"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__actual_factory_out
+msgid "Actual Factory Out"
+msgstr "实际工厂发货"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__actual_gate_in
+msgid "Actual Gate-in"
+msgstr "实际集港/装柜"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__actual_received
+msgid "Actual Received"
+msgstr "实际签收入库"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__actual_transshipment
+msgid "Actual Transshipment"
+msgstr "实际中转"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__transport_mode__air
+msgid "Air"
+msgstr "空运"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__arrived
+msgid "Arrived"
+msgstr "已到港"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_attachment_count
+msgid "Attachment Count"
+msgstr "附件数量"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_res_config_settings__transit_auto_generate_on_confirm
+msgid "Auto-create transit tracking on PO confirmation"
+msgstr "采购订单确认时自动创建在途跟踪"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__actual_received
+msgid ""
+"Auto-filled when the related incoming stock move is done; may be adjusted "
+"manually."
+msgstr "关联的入库库存移动完成时自动填入；可手动调整。"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.res_config_settings_view_form_transit
+msgid ""
+"Automatically create transit tracking records when a purchase order is "
+"confirmed"
+msgstr "采购订单确认时自动创建在途跟踪记录"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__bill_of_lading
+msgid "B/L No."
+msgstr "提单号"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: purchase_transit
+#: model:ir.model,name:purchase_transit.model_res_config_settings
+msgid "Config Settings"
+msgstr "配置设定"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__container_no
+msgid "Container No."
+msgstr "集装箱号"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Customs (plan / actual)"
+msgstr "清关（计划 / 实际）"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__customs_cleared
+msgid "Customs Cleared"
+msgstr "已清关"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__transit_days
+msgid "Days between departure (ATD) and receipt."
+msgstr "从开船 (ATD) 到签收的天数。"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__departed
+msgid "Departed"
+msgstr "已开船"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__pod
+msgid "Destination port in Fiji."
+msgstr "斐济目的港。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_order_line__display_name
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__display_name
+#: model:ir.model.fields,field_description:purchase_transit.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:purchase_transit.field_stock_move__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__planned_eta
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_calendar
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "ETA"
+msgstr "预计到港 (ETA)"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "ETA / ATA"
+msgstr "预计到港 / 实际到港"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__eta_delay_days
+msgid "ETA Delay (days)"
+msgstr "到港延误（天）"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "ETA Month"
+msgstr "到港月份"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_kanban
+msgid "ETA:"
+msgstr "预计到港："
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__planned_etd
+msgid "ETD"
+msgstr "预计开船 (ETD)"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "ETD / ATD"
+msgstr "预计开船 / 实际开船"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__factory_out
+msgid "Factory Out"
+msgstr "工厂发货"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Factory Out (plan / actual)"
+msgstr "工厂发货（计划 / 实际）"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者（业务伙伴）"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font Awesome 图标，例如 fa-tasks"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__forwarder_id
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "Forwarder"
+msgstr "货代"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__gate_in
+msgid "Gate In"
+msgstr "集港装柜"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Gate-in (plan / actual)"
+msgstr "集港/装柜（计划 / 实际）"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_order_view_form_transit
+msgid "Generate Transit Tracking"
+msgstr "生成在途跟踪"
+
+#. module: purchase_transit
+#: model_terms:ir.actions.act_window,help:purchase_transit.purchase_transit_action
+msgid ""
+"Generate transit records from a confirmed purchase order, then\n"
+"               update milestones as the shipment progresses."
+msgstr "从已确认的采购订单生成在途记录，然后\n               随货物运输进度更新各里程碑。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__has_message
+msgid "Has Message"
+msgstr "有消息"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_order__id
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_order_line__id
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__id
+#: model:ir.model.fields,field_description:purchase_transit.field_res_config_settings__id
+#: model:ir.model.fields,field_description:purchase_transit.field_stock_move__id
+msgid "ID"
+msgstr ""
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_exception_icon
+msgid "Icon"
+msgstr "图标"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "用于标识异常活动的图标。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "如果勾选，新消息需要您处理。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__message_has_error
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "如果勾选，部分消息存在发送错误。"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "In Transit"
+msgstr "在途中"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__product_qty
+msgid "In-Transit Qty"
+msgstr "在途数量"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__incoterm_id
+msgid "Incoterm"
+msgstr "贸易术语"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Internal notes..."
+msgstr "内部备注……"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__incoterm_id
+msgid ""
+"International Commercial Terms are a series of predefined commercial terms "
+"used in international transactions."
+msgstr "国际贸易术语是一系列用于国际贸易的预定义商业条款。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_is_follower
+msgid "Is Follower"
+msgstr "是关注者"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__transport_mode__land
+msgid "Land"
+msgstr "陆运"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__is_late
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_kanban
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "Late"
+msgstr "延误"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__state
+msgid "Latest reached milestone (derived from the actual dates)."
+msgstr "已到达的最新里程碑（根据实际日期推导）。"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__pod__lautoka
+msgid "Lautoka (FJLTK)"
+msgstr "劳托卡 (FJLTK)"
+
+#. module: purchase_transit
+#: model:res.groups,name:purchase_transit.group_transit_manager
+msgid "Logistics Manager"
+msgstr "物流经理"
+
+#. module: purchase_transit
+#: model:res.groups,name:purchase_transit.group_transit_user
+msgid "Logistics Officer"
+msgstr "物流专员"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_has_error
+msgid "Message Delivery error"
+msgstr "消息发送错误"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_ids
+msgid "Messages"
+msgstr "消息"
+
+#. module: purchase_transit
+#. odoo-python
+#: code:addons/purchase_transit/models/purchase_transit.py:0
+msgid ""
+"Milestone dates are out of order: '%(later)s' (%(later_date)s) is earlier "
+"than '%(earlier)s' (%(earlier_date)s)."
+msgstr "里程碑日期顺序错误：'%(later)s'（%(later_date)s）早于 '%(earlier)s'（%(earlier_date)s）。"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Milestones"
+msgstr "里程碑"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "我的活动截止日期"
+
+#. module: purchase_transit
+#. odoo-python
+#: code:addons/purchase_transit/models/purchase_transit.py:0
+msgid "New"
+msgstr "新建"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "下一活动截止日期"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_summary
+msgid "Next Activity Summary"
+msgstr "下一活动摘要"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_type_id
+msgid "Next Activity Type"
+msgstr "下一活动类型"
+
+#. module: purchase_transit
+#: model_terms:ir.actions.act_window,help:purchase_transit.purchase_transit_action
+msgid "No transit tracking yet"
+msgstr "暂无在途跟踪"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__note
+msgid "Notes"
+msgstr "备注"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_needaction_counter
+msgid "Number of Actions"
+msgstr "操作数量"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_has_error_counter
+msgid "Number of errors"
+msgstr "错误数量"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "需要处理的消息数量"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "存在发送错误的消息数量"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__date_ordered
+msgid "Order confirmation date (date part of the PO approval datetime)."
+msgstr "订单确认日期（采购订单审批时间的日期部分）。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__date_ordered
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__ordered
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Ordered"
+msgstr "已下单"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__pol
+msgid "Origin port (China)."
+msgstr "起运港（中国）。"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__pod__other
+msgid "Other"
+msgstr "其他"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__is_partial
+msgid "Partially Received"
+msgstr "部分收货"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__planned_customs
+msgid "Planned Customs"
+msgstr "计划清关"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__planned_factory_out
+msgid "Planned Factory Out"
+msgstr "计划工厂发货"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__planned_gate_in
+msgid "Planned Gate-in"
+msgstr "计划集港/装柜"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__planned_received
+msgid "Planned Received"
+msgstr "计划签收"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__planned_transshipment
+msgid "Planned Transshipment"
+msgstr "计划中转"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__pod
+msgid "Port of Discharge"
+msgstr "目的港"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__pol
+msgid "Port of Loading"
+msgstr "起运港"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__product_id
+msgid "Product"
+msgstr "产品"
+
+#. module: purchase_transit
+#: model:ir.model,name:purchase_transit.model_purchase_order
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__order_id
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Purchase Order"
+msgstr "采购订单"
+
+#. module: purchase_transit
+#: model:ir.model,name:purchase_transit.model_purchase_order_line
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__purchase_line_id
+msgid "Purchase Order Line"
+msgstr "采购订单明细"
+
+#. module: purchase_transit
+#: model:ir.model,name:purchase_transit.model_purchase_transit
+msgid "Purchase Transit Tracking"
+msgstr "采购在途跟踪"
+
+#. module: purchase_transit
+#: model:ir.actions.server,name:purchase_transit.ir_cron_check_transit_delays_ir_actions_server
+msgid "Purchase Transit: check delays"
+msgstr "采购在途：检查延误"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__received
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "Received"
+msgstr "已签收"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Received (plan / actual)"
+msgstr "签收（计划 / 实际）"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__qty_received
+msgid "Received Qty"
+msgstr "已收数量"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__name
+msgid "Reference"
+msgstr "单号"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__activity_user_id
+msgid "Responsible User"
+msgstr "负责人"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "短信发送错误"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__transport_mode__sea
+msgid "Sea"
+msgstr "海运"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Shipment"
+msgstr "运输信息"
+
+#. module: purchase_transit
+#. odoo-python
+#: code:addons/purchase_transit/models/purchase_transit.py:0
+msgid "Shipment delayed: %s"
+msgstr "运输延误：%s"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Source"
+msgstr "来源"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__state
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "Status"
+msgstr "状态"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "基于活动的状态\n逾期：截止日期已过\n今天：活动日期为今天\n计划中：未来的活动。"
+
+#. module: purchase_transit
+#: model:ir.model,name:purchase_transit.model_stock_move
+msgid "Stock Move"
+msgstr "库存移动"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__partner_id
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+msgid "Supplier"
+msgstr "供应商"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__pod__suva
+msgid "Suva (FJSUV)"
+msgstr "苏瓦 (FJSUV)"
+
+#. module: purchase_transit
+#. odoo-python
+#: code:addons/purchase_transit/models/purchase_transit.py:0
+msgid "The next milestone is past its planned date. Please follow up."
+msgstr "下一里程碑已超过计划日期，请及时跟进。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__is_late
+msgid "The next pending milestone is past its planned date."
+msgstr "下一个待完成里程碑已超过计划日期。"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_order_view_form_transit
+msgid "Transit"
+msgstr "在途"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_graph
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_pivot
+msgid "Transit Analysis"
+msgstr "在途分析"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_order__transit_count
+msgid "Transit Count"
+msgstr "在途记录数"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__transit_days
+msgid "Transit Days"
+msgstr "在途天数"
+
+#. module: purchase_transit
+#. odoo-python
+#: code:addons/purchase_transit/models/purchase_order.py:0
+#: model:ir.actions.act_window,name:purchase_transit.purchase_transit_action
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_order__transit_ids
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_order_line__transit_ids
+#: model:ir.ui.menu,name:purchase_transit.menu_purchase_transit
+#: model:ir.ui.menu,name:purchase_transit.menu_purchase_transit_root
+#: model:res.groups.privilege,name:purchase_transit.res_groups_privilege_purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_list
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_search
+#: model_terms:ir.ui.view,arch_db:purchase_transit.res_config_settings_view_form_transit
+msgid "Transit Tracking"
+msgstr "在途跟踪"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__transport_mode
+msgid "Transport Mode"
+msgstr "运输方式"
+
+#. module: purchase_transit
+#: model:ir.model.fields.selection,name:purchase_transit.selection__purchase_transit__state__transshipment
+msgid "Transshipment"
+msgstr "中转"
+
+#. module: purchase_transit
+#: model_terms:ir.ui.view,arch_db:purchase_transit.purchase_transit_view_form
+msgid "Transshipment (plan / actual)"
+msgstr "中转（计划 / 实际）"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__pot
+msgid "Transshipment Port"
+msgstr "中转港"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "记录上异常活动的类型。"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__vessel_name
+msgid "Vessel"
+msgstr "船名"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__voyage_no
+msgid "Voyage No."
+msgstr "航次"
+
+#. module: purchase_transit
+#: model:ir.model.fields,field_description:purchase_transit.field_purchase_transit__website_message_ids
+msgid "Website Messages"
+msgstr "网站消息"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__website_message_ids
+msgid "Website communication history"
+msgstr "网站沟通历史"
+
+#. module: purchase_transit
+#: model:ir.model.fields,help:purchase_transit.field_purchase_transit__partner_id
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr "您可以通过名称、税号、电子邮件或内部参考来查找供应商。"
+
+#. module: purchase_transit
+#. odoo-python
+#: code:addons/purchase_transit/models/purchase_order.py:0
+msgid "order_id"
+msgstr ""
