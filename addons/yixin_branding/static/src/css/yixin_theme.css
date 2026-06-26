@@ -114,6 +114,59 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
     vertical-align: middle;
     cursor: help;
 }
+
+/* ============ 5. App sub-menus pinned to a LEFT sidebar ============
+   The apps switcher + brand + systray stay in the top bar; the current app's
+   sections (.o_menu_sections) are relocated to a fixed white left column,
+   stacked vertically (top dropdown -> click app -> its functions on the left). */
+.o_main_navbar .o_menu_sections {
+    position: fixed;
+    top: var(--o-navbar-height, 46px);
+    left: 0;
+    bottom: 0;
+    width: 216px;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    background: #ffffff;
+    border-right: 1px solid #e1e7ee;
+    box-shadow: 1px 0 4px rgba(0,0,0,.04);
+    padding: 10px 8px;
+    overflow-y: auto;
+    z-index: 1000;
+    gap: 3px;
+}
+.o_main_navbar .o_menu_sections .o_nav_entry,
+.o_main_navbar .o_menu_sections > button,
+.o_main_navbar .o_menu_sections .dropdown-toggle {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    color: #33475b !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 7px;
+    padding: 10px 12px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    white-space: nowrap;
+}
+.o_main_navbar .o_menu_sections .o_nav_entry:hover,
+.o_main_navbar .o_menu_sections > button:hover,
+.o_main_navbar .o_menu_sections .dropdown-toggle:hover {
+    background: #eef7f0 !important;
+}
+.o_main_navbar .o_menu_sections .o_nav_entry.active,
+.o_main_navbar .o_menu_sections .o_nav_entry.focus,
+.o_main_navbar .o_menu_sections .dropdown-toggle.show {
+    background: #e6f4ea !important;
+    color: #2e8b57 !important;
+    box-shadow: inset 3px 0 0 #5cb85c;
+}
+/* shift the app content to the right of the sidebar */
+.o_action_manager { margin-left: 216px; }
 /* value column: light blue tint */
 .o_form_view .o_inner_group.grid > .o_wrap_input,
 .o_form_view .o_inner_group.grid > .o_cell_custom:not(.o_wrap_label) {
