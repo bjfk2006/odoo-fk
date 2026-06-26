@@ -46,7 +46,16 @@ input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; 
    Sizes step down by level; every level is bold EXCEPT the innermost
    (the field values), which stay regular weight and smallest. */
 .o_web_client { font-size: 14px; }
-.o_main_navbar { font-size: 15px; }
+
+/* top navbar — larger & bolder for prominence */
+.o_main_navbar { font-size: 17px; font-weight: 600; }
+.o_main_navbar .o_menu_brand { font-size: 20px !important; font-weight: 700 !important; }
+.o_main_navbar .o_nav_entry,
+.o_main_navbar .dropdown-toggle,
+.o_main_navbar .o_menu_sections > * {
+    font-size: 16.5px !important;
+    font-weight: 600 !important;
+}
 
 /* L1 — record title (largest, bold) */
 .o_form_sheet .oe_title h1,
