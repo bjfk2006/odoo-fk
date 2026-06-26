@@ -5,14 +5,16 @@
     'category': 'Tools',
     'summary': 'Replace the Odoo company logo and backend favicon with the '
                'Yixin Construction brand (light-blue cube).',
-    'depends': ['web'],
+    'depends': ['web', 'mail'],
     'data': [
         'views/webclient_templates.xml',
+        'views/res_config_settings_views.xml',
         'data/hide_discuss.xml',
     ],
     'assets': {
         'web.assets_backend': [
             'yixin_branding/static/src/css/yixin_theme.css',
+            'yixin_branding/static/src/js/yx_systray.js',
         ],
     },
     'post_init_hook': 'post_init_hook',

@@ -3,6 +3,8 @@ import base64
 
 from odoo.tools import file_open
 
+from . import models
+
 LOGO_PATH = 'yixin_branding/static/src/img/yx-logo-blue.png'
 
 
