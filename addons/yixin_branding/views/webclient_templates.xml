@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Override the backend favicon (web.layout falls back to the static
+         /web/static/img/favicon.ico when x_icon is not set). Keep x_icon so
+         the PWA scoped app icon still works. -->
+    <template id="brand_favicon" inherit_id="web.layout" name="Yixin Favicon">
+        <xpath expr="//link[@rel='shortcut icon']" position="attributes">
+            <attribute name="t-att-href">x_icon or '/yixin_branding/static/src/img/favicon.ico'</attribute>
+        </xpath>
+    </template>
+
+</odoo>
