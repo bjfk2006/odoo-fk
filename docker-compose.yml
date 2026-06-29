@@ -44,7 +44,7 @@ services:
       --data-dir=/var/lib/odoo-data
       --http-interface=0.0.0.0 --http-port=8069
       --max-cron-threads=1
-      -i purchase_transit
+      -i purchase_transit,yixin_branding
     volumes:
       - .:/opt/odoo-src
       - odoo-web-data:/var/lib/odoo-data
