@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">
+    <record id="product_GC_GJ_RB20" model="product.product">
+        <field name="name">螺纹钢 HRB400E Φ20</field>
+        <field name="default_code">GC-GJ-RB20</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">4.54</field>
+        <field name="standard_price">3.85</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-RB20.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_tg'), 'price': 3.85})]"/>
+    </record>
+    <record id="product_GC_GJ_RB25" model="product.product">
+        <field name="name">螺纹钢 HRB400E Φ25</field>
+        <field name="default_code">GC-GJ-RB25</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">4.46</field>
+        <field name="standard_price">3.78</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-RB25.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_tg'), 'price': 3.78})]"/>
+    </record>
+    <record id="product_GC_GJ_HB200" model="product.product">
+        <field name="name">H型钢 HW200×200</field>
+        <field name="default_code">GC-GJ-HB200</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">5.37</field>
+        <field name="standard_price">4.55</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-HB200.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_tg'), 'price': 4.55})]"/>
+    </record>
+    <record id="product_GC_GJ_IB20" model="product.product">
+        <field name="name">工字钢 I20a</field>
+        <field name="default_code">GC-GJ-IB20</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">5.1</field>
+        <field name="standard_price">4.32</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-IB20.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_sg'), 'price': 4.32})]"/>
+    </record>
+    <record id="product_GC_GJ_AG63" model="product.product">
+        <field name="name">角钢 ∠63×6</field>
+        <field name="default_code">GC-GJ-AG63</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">4.84</field>
+        <field name="standard_price">4.1</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-AG63.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_sg'), 'price': 4.1})]"/>
+    </record>
+    <record id="product_GC_GJ_CH16" model="product.product">
+        <field name="name">槽钢 [16a</field>
+        <field name="default_code">GC-GJ-CH16</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">4.96</field>
+        <field name="standard_price">4.2</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-CH16.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_sg'), 'price': 4.2})]"/>
+    </record>
+    <record id="product_GC_GJ_PP108" model="product.product">
+        <field name="name">无缝钢管 Φ108×4.5</field>
+        <field name="default_code">GC-GJ-PP108</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">6.49</field>
+        <field name="standard_price">5.5</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-PP108.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_sg'), 'price': 5.5})]"/>
+    </record>
+    <record id="product_GC_GJ_SH25" model="product.product">
+        <field name="name">镀锌钢板 δ2.5</field>
+        <field name="default_code">GC-GJ-SH25</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">5.66</field>
+        <field name="standard_price">4.8</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-GJ-SH25.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_tg'), 'price': 4.8})]"/>
+    </record>
+    <record id="product_GC_ALC_P100" model="product.product">
+        <field name="name">ALC墙板 100mm</field>
+        <field name="default_code">GC-ALC-P100</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">112.1</field>
+        <field name="standard_price">95.0</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-ALC-P100.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_yx'), 'price': 95.0})]"/>
+    </record>
+    <record id="product_GC_ALC_B100" model="product.product">
+        <field name="name">ALC砌块 100mm</field>
+        <field name="default_code">GC-ALC-B100</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">10.03</field>
+        <field name="standard_price">8.5</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-ALC-B100.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_yx'), 'price': 8.5})]"/>
+    </record>
+    <record id="product_GC_INS_01" model="product.product">
+        <field name="name">保温结构一体板</field>
+        <field name="default_code">GC-INS-01</field>
+        <field name="categ_id" ref="categ_eng"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">212.4</field>
+        <field name="standard_price">180.0</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/GC-INS-01.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_yx'), 'price': 180.0})]"/>
+    </record>
+    <record id="product_HC_WELD_322" model="product.product">
+        <field name="name">焊条 J422 Φ3.2</field>
+        <field name="default_code">HC-WELD-322</field>
+        <field name="categ_id" ref="categ_cons"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">37.76</field>
+        <field name="standard_price">32.0</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/HC-WELD-322.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_wz'), 'price': 32.0})]"/>
+    </record>
+    <record id="product_HC_CUT_400" model="product.product">
+        <field name="name">树脂切割片 Φ400</field>
+        <field name="default_code">HC-CUT-400</field>
+        <field name="categ_id" ref="categ_cons"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">4.13</field>
+        <field name="standard_price">3.5</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/HC-CUT-400.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_wz'), 'price': 3.5})]"/>
+    </record>
+    <record id="product_HC_PPE_HAT" model="product.product">
+        <field name="name">安全帽 ABS</field>
+        <field name="default_code">HC-PPE-HAT</field>
+        <field name="categ_id" ref="categ_cons"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">21.24</field>
+        <field name="standard_price">18.0</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/HC-PPE-HAT.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_wz'), 'price': 18.0})]"/>
+    </record>
+    <record id="product_BJ_TOOL_AG" model="product.product">
+        <field name="name">角磨机 100mm</field>
+        <field name="default_code">BJ-TOOL-AG</field>
+        <field name="categ_id" ref="categ_spare"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">306.8</field>
+        <field name="standard_price">260.0</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/BJ-TOOL-AG.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_wz'), 'price': 260.0})]"/>
+    </record>
+    <record id="product_BJ_BRG_6206" model="product.product">
+        <field name="name">深沟球轴承 6206</field>
+        <field name="default_code">BJ-BRG-6206</field>
+        <field name="categ_id" ref="categ_spare"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">25.96</field>
+        <field name="standard_price">22.0</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/BJ-BRG-6206.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_wz'), 'price': 22.0})]"/>
+    </record>
+    <record id="product_OF_A4_70" model="product.product">
+        <field name="name">A4复印纸 70g</field>
+        <field name="default_code">OF-A4-70</field>
+        <field name="categ_id" ref="categ_office"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">27.14</field>
+        <field name="standard_price">23.0</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/OF-A4-70.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_wz'), 'price': 23.0})]"/>
+    </record>
+    <record id="product_OF_PEN_05" model="product.product">
+        <field name="name">中性签字笔 0.5</field>
+        <field name="default_code">OF-PEN-05</field>
+        <field name="categ_id" ref="categ_office"/>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="is_storable" eval="True"/>
+        <field name="purchase_ok" eval="True"/>
+        <field name="list_price">1.77</field>
+        <field name="standard_price">1.5</field>
+        <field name="image_1920" type="base64" file="yixin_demo/static/img/OF-PEN-05.png"/>
+        <field name="seller_ids" eval="[(0,0,{'partner_id': ref('partner_wz'), 'price': 1.5})]"/>
+    </record>
+</data>
+</odoo>

@@ -1,0 +1,233 @@
+/* YIXIN-THEME-MARKER — backend theme: light blue + light green, larger fonts,
+   tabular form details. Loaded into web.assets_backend by yixin_branding. */
+
+/* ============ 1. Replace purple with light blue + light green ============ */
+.o_main_navbar {
+    background: linear-gradient(90deg, #36a9c9 0%, #5cb85c 100%) !important;
+}
+.o_main_navbar > .o_menu_brand,
+.o_main_navbar .o_nav_entry,
+.o_main_navbar .dropdown-toggle,
+.o_main_navbar .o_menu_systray > * {
+    color: #ffffff !important;
+}
+
+/* primary buttons / links / accents -> light blue */
+.btn-primary,
+.o_form_button_save,
+.o-dropdown--menu .dropdown-item.active {
+    background-color: #2f9bd6 !important;
+    border-color: #2f9bd6 !important;
+    color: #fff !important;
+}
+.btn-primary:hover, .btn-primary:focus, .o_form_button_save:hover {
+    background-color: #2486bd !important;
+    border-color: #2486bd !important;
+}
+.btn-secondary { color: #2486bd !important; }
+a, .o_form_uri, .text-primary, .o_field_widget .text-primary {
+    color: #2486bd !important;
+}
+input[type="checkbox"], input[type="radio"] { accent-color: #5cb85c !important; }
+
+/* active notebook tab underline -> green; statusbar reached -> green */
+.o_notebook .nav-link.active {
+    color: #2486bd !important;
+    border-bottom: 3px solid #5cb85c !important;
+}
+.o_statusbar_status .o_arrow_button.btn-primary,
+.o_statusbar_status .dropdown-item.btn-primary {
+    background-color: #5cb85c !important;
+    border-color: #5cb85c !important;
+    color: #fff !important;
+}
+
+/* ============ 2. Font hierarchy ============
+   Sizes step down by level; every level is bold EXCEPT the innermost
+   (the field values), which stay regular weight and smallest. */
+.o_web_client { font-size: 14px; }
+
+/* top navbar — larger & bolder for prominence */
+.o_main_navbar { font-size: 17px; font-weight: 600; }
+.o_main_navbar .o_menu_brand { font-size: 20px !important; font-weight: 700 !important; }
+.o_main_navbar .o_nav_entry,
+.o_main_navbar .dropdown-toggle,
+.o_main_navbar .o_menu_sections > * {
+    font-size: 16.5px !important;
+    font-weight: 600 !important;
+}
+
+/* L1 — record title (largest, bold) */
+.o_form_sheet .oe_title h1,
+.o_form_sheet .oe_title h1 input { font-size: 25px !important; font-weight: 700 !important; }
+.o_breadcrumb .active,
+.o_breadcrumb .o_last_breadcrumb_item { font-size: 18px; font-weight: 700; }
+
+/* L2 — notebook tabs (bold) */
+.o_notebook .nav-link { font-size: 16.5px !important; font-weight: 700 !important; }
+
+/* L3 — field labels (bold) */
+.o_form_view .o_form_label,
+.o_form_view .o_wrap_label { font-size: 14.5px; font-weight: 700; }
+
+/* innermost — field values (regular weight, smallest) */
+.o_form_view .o_inner_group.grid > .o_wrap_input,
+.o_form_view .o_inner_group.grid > .o_wrap_input .o_field_widget,
+.o_form_view .o_inner_group.grid > .o_wrap_input .o_field_widget * {
+    font-weight: 400 !important;
+    font-size: 13.5px;
+}
+.o_list_table { font-size: 14px; }
+
+/* ============ 3. Form detail -> clean bordered table ============
+   Odoo 17+ renders groups as a CSS grid of .o_cell divs (no <table>),
+   so we draw the lines on the grid cells. */
+.o_form_view .o_inner_group.grid {
+    border: 1px solid #c7d2dc;
+    border-radius: 8px;
+    overflow: hidden;
+    column-gap: 0 !important;
+    row-gap: 0 !important;
+    margin-bottom: 14px;
+}
+.o_form_view .o_inner_group.grid > .o_cell {
+    border-bottom: 1px solid #dde5ec;
+    padding: 9px 14px !important;
+    align-content: center;
+    margin: 0 !important;
+}
+/* label column: light green tint + bold + vertical divider */
+.o_form_view .o_inner_group.grid > .o_wrap_label {
+    border-right: 1px solid #dde5ec;
+    background: #f1f9f2;
+    font-weight: 700;
+    color: #2f4858;
+}
+
+/* ============ 4. Field help "?" -> standard circled badge ============
+   form_label.xml renders help as <sup class="text-info">?</sup>; round it. */
+.o_form_view .o_form_label sup,
+.o_form_view .o_wrap_label sup {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    padding: 0 !important;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+    cursor: help;
+}
+
+/* ============ 6. Apps menu dropdown — bigger, bolder, with icons ============ */
+.o-dropdown--menu:has(.o_app) {
+    min-width: 250px;
+    padding: 8px !important;
+}
+.o-dropdown--menu .o_app {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    border-radius: 8px;
+    color: #2f4858 !important;
+}
+.o-dropdown--menu .o_app:hover,
+.o-dropdown--menu .o_app.focus {
+    background: #e6f4ea !important;
+    color: #2e8b57 !important;
+}
+/* leading icon (Font Awesome) — default + per-app */
+.o-dropdown--menu .o_app::before {
+    font-family: "FontAwesome";
+    font-size: 20px;
+    width: 26px;
+    text-align: center;
+    color: #2f9bd6;
+    content: "\f009"; /* th-large (default) */
+}
+.o-dropdown--menu .o_app:hover::before,
+.o-dropdown--menu .o_app.focus::before { color: #2e8b57; }
+.o-dropdown--menu .o_app[data-menu-xmlid="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"]::before { content: "\f0e4"; } /* dashboard */
+.o-dropdown--menu .o_app[data-menu-xmlid="account.menu_finance"]::before { content: "\f0d6"; }    /* invoice/money */
+.o-dropdown--menu .o_app[data-menu-xmlid="purchase.menu_purchase_root"]::before { content: "\f07a"; } /* cart */
+.o-dropdown--menu .o_app[data-menu-xmlid="stock.menu_stock_root"]::before { content: "\f1b3"; }    /* cubes */
+.o-dropdown--menu .o_app[data-menu-xmlid="base.menu_administration"]::before { content: "\f013"; } /* cog */
+.o-dropdown--menu .o_app[data-menu-xmlid="base.menu_tests"]::before { content: "\f0c3"; }          /* flask */
+
+/* ============ 7. Save / Discard as text buttons (not cloud icon) ============ */
+.o_form_button_save,
+.o_form_button_cancel {
+    padding: 4px 14px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    line-height: 1.5 !important;
+    height: auto !important;
+}
+.o_form_button_save i,
+.o_form_button_cancel i { display: none !important; }
+.o_form_button_save {
+    background: #2f9bd6 !important;
+    color: #ffffff !important;
+    border: 0 !important;
+}
+.o_form_button_save:hover { background: #2486bd !important; }
+.o_form_button_save::after { content: "保存"; }
+.o_form_button_cancel {
+    background: #eef1f4 !important;
+    color: #444 !important;
+    border: 1px solid #d6dce2 !important;
+    margin-left: 6px;
+}
+.o_form_button_cancel:hover { background: #e2e6ea !important; }
+.o_form_button_cancel::after { content: "放弃"; }
+
+/* ============ 8. Dialog inputs -> visible bordered boxes ============
+   Editable-list / form inputs inside dialogs (e.g. the Change Password
+   wizard) are borderless by default and look empty; give them a clear box. */
+.modal .o_field_widget input.o_input,
+.modal .o_field_widget textarea.o_input,
+.modal .o_data_cell input,
+.modal .o_data_cell textarea,
+.modal .o_data_cell .o_input {
+    border: 1px solid #c7d2dc !important;
+    border-radius: 6px !important;
+    background: #ffffff !important;
+    padding: 6px 10px !important;
+    min-height: 34px !important;
+    width: 100%;
+}
+.modal .o_data_cell input:focus,
+.modal .o_field_widget input.o_input:focus,
+.modal .o_data_cell .o_input:focus {
+    border-color: #2f9bd6 !important;
+    box-shadow: 0 0 0 2px rgba(47,155,214,.15) !important;
+    outline: 0 !important;
+}
+.modal .o_list_table .o_data_cell { padding: 6px 10px !important; }
+/* value column: light blue tint */
+.o_form_view .o_inner_group.grid > .o_wrap_input,
+.o_form_view .o_inner_group.grid > .o_cell_custom:not(.o_wrap_label) {
+    background: #f1f8fd;
+}
+.o_form_view .o_inner_group.grid > .o_wrap_label .o_form_label { font-weight: 600; }
+
+/* Skip table styling for full-width note groups (text/html fields, e.g.
+   内部说明) so the column tints don't bleed into them as a stray strip. */
+.o_form_view .o_inner_group.grid:has(.o_field_text),
+.o_form_view .o_inner_group.grid:has(.o_field_html) {
+    border: 0 !important;
+}
+.o_form_view .o_inner_group.grid:has(.o_field_text) > .o_cell,
+.o_form_view .o_inner_group.grid:has(.o_field_html) > .o_cell {
+    background: transparent !important;
+    border: 0 !important;
+}

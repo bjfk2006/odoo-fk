@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">
+    <record id="op_GC_GJ_RB20" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_RB20"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">2000</field>
+        <field name="product_max_qty">4000</field>
+    </record>
+    <record id="op_GC_GJ_RB25" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_RB25"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">1500</field>
+        <field name="product_max_qty">3000</field>
+    </record>
+    <record id="op_GC_GJ_HB200" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_HB200"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">3000</field>
+        <field name="product_max_qty">6000</field>
+    </record>
+    <record id="op_GC_GJ_IB20" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_IB20"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">1000</field>
+        <field name="product_max_qty">2000</field>
+    </record>
+    <record id="op_GC_GJ_AG63" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_AG63"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">4000</field>
+        <field name="product_max_qty">8000</field>
+    </record>
+    <record id="op_GC_GJ_CH16" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_CH16"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">800</field>
+        <field name="product_max_qty">1600</field>
+    </record>
+    <record id="op_GC_GJ_PP108" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_PP108"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">1000</field>
+        <field name="product_max_qty">2000</field>
+    </record>
+    <record id="op_GC_GJ_SH25" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_GJ_SH25"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">2000</field>
+        <field name="product_max_qty">4000</field>
+    </record>
+    <record id="op_GC_ALC_P100" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_ALC_P100"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">300</field>
+        <field name="product_max_qty">600</field>
+    </record>
+    <record id="op_GC_ALC_B100" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_ALC_B100"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">2000</field>
+        <field name="product_max_qty">4000</field>
+    </record>
+    <record id="op_GC_INS_01" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_GC_INS_01"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">150</field>
+        <field name="product_max_qty">300</field>
+    </record>
+    <record id="op_HC_WELD_322" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_HC_WELD_322"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">50</field>
+        <field name="product_max_qty">100</field>
+    </record>
+    <record id="op_HC_CUT_400" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_HC_CUT_400"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">200</field>
+        <field name="product_max_qty">400</field>
+    </record>
+    <record id="op_HC_PPE_HAT" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_HC_PPE_HAT"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">100</field>
+        <field name="product_max_qty">200</field>
+    </record>
+    <record id="op_BJ_TOOL_AG" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_BJ_TOOL_AG"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">5</field>
+        <field name="product_max_qty">10</field>
+    </record>
+    <record id="op_BJ_BRG_6206" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_BJ_BRG_6206"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">40</field>
+        <field name="product_max_qty">80</field>
+    </record>
+    <record id="op_OF_A4_70" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_OF_A4_70"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">30</field>
+        <field name="product_max_qty">60</field>
+    </record>
+    <record id="op_OF_PEN_05" model="stock.warehouse.orderpoint">
+        <field name="product_id" ref="product_OF_PEN_05"/>
+        <field name="location_id" ref="stock.stock_location_stock"/>
+        <field name="product_min_qty">100</field>
+        <field name="product_max_qty">200</field>
+    </record>
+</data>
+</odoo>

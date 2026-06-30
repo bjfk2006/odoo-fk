@@ -1,5 +1,7 @@
 # Odoo
 
+> 📦 **易新建筑进销存系统（采购在途/船运跟踪）部署与使用** → 见 [**docs/部署与使用说明.md**](docs/部署与使用说明.md)（一步步部署 + 使用指南）。快速启动：`docker compose up -d`。
+
 [![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
 [![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
 [![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)

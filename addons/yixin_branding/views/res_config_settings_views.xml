@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_yixin" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.yixin</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='general_settings']" position="inside">
+                <block title="易新界面 / Yixin UI" name="yixin_ui_block">
+                    <setting string="显示讨论应用"
+                             help="勾选后在导航中显示「讨论」应用（默认隐藏）">
+                        <field name="yx_show_discuss"/>
+                    </setting>
+                    <setting string="显示应用菜单"
+                             help="勾选后显示「应用」(模块管理) 菜单（默认隐藏）">
+                        <field name="yx_show_apps_menu"/>
+                    </setting>
+                    <setting string="显示顶部通知"
+                             help="勾选后显示顶部的通知/消息图标（默认隐藏）">
+                        <field name="yx_show_notification"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

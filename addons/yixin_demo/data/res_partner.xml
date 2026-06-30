@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">
+    <record id="partner_tg" model="res.partner">
+        <field name="name">河钢集团唐钢</field>
+        <field name="is_company" eval="True"/>
+        <field name="supplier_rank">1</field>
+    </record>
+    <record id="partner_sg" model="res.partner">
+        <field name="name">江苏沙钢集团</field>
+        <field name="is_company" eval="True"/>
+        <field name="supplier_rank">1</field>
+    </record>
+    <record id="partner_yx" model="res.partner">
+        <field name="name">易新预制构件厂</field>
+        <field name="is_company" eval="True"/>
+        <field name="supplier_rank">1</field>
+    </record>
+    <record id="partner_wz" model="res.partner">
+        <field name="name">唐山鸿运物资商贸有限公司</field>
+        <field name="is_company" eval="True"/>
+        <field name="supplier_rank">1</field>
+    </record>
+    <record id="partner_ff" model="res.partner">
+        <field name="name">中外运·斐济航线（货代）</field>
+        <field name="is_company" eval="True"/>
+        <field name="supplier_rank">1</field>
+    </record>
+</data>
+</odoo>
